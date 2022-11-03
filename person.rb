@@ -1,3 +1,6 @@
+require_relative('./decorators/nameable')
+require_relative('./decorators/capitalized_decorator')
+require_relative('./decorators/trimmer_decorator')
 class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
