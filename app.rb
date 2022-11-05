@@ -1,7 +1,7 @@
-require_relative './book'
-require_relative './teacher'
-require_relative './student'
-require_relative './rental'
+require_relative('./book')
+require_relative('./teacher') 
+require_relative('./student')
+require_relative('./rental') 
 
 class App
   def initialize
@@ -171,7 +171,6 @@ class App
     puts('Rentals: ')
 
     @rentals.each do |rental|
-      # binding.pry
       next unless rental.person.id == selected_id
 
       puts
