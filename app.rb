@@ -62,7 +62,7 @@ class App
       'class_name' => new_student.class.name,
       'name' => name,
       'age' => age,
-      'parent_permission' => new_student.parent_permission,
+      'parent_permission' => parent_permission,
       'id' => new_student.id
     }
     @persons << hash
@@ -163,10 +163,10 @@ class App
   end
 
   def sava_data
-    File.write('./json/books.json', JSON.generate(@books)) if @books.any?
+    File.write('./json/books.json', JSON.pretty_generate(@books)) if @books.any?
 
-    File.write('./json/people.json', JSON.generate(@persons)) if @persons.any?
+    File.write('./json/people.json', JSON.pretty_generate(@persons)) if @persons.any?
 
-    File.write('./json/rentals.json', JSON.generate(@rentals)) if @rentals.any?
+    File.write('./json/rentals.json', JSON.pretty_generate(@rentals)) if @rentals.any?
   end
 end
